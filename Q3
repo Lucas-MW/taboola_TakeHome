@@ -1,1 +1,27 @@
+-- create a table
+CREATE TABLE products (
+  name varchar(255) PRIMARY KEY,
+  category varchar(255)
+);
 
+CREATE TABLE product_price_history (
+  product varchar(255),
+  price_information MONEY,
+  start_date DATE,
+  end_date DATE,
+  current_price MONEY,
+  FOREIGN KEY (product) REFERENCES product(name)
+);
+
+-- insert some values
+INSERT INTO products VALUES ('apple', 'IT');
+INSERT INTO products VALUES ('samsung', 'IT');
+INSERT INTO product_price_history VALUES ('apple',350, 2021-06-01 ,2021-06-21, 450);
+INSERT INTO product_price_history VALUES ('samsung',600, 2022-03-01 ,NULL, 700);
+-- joins
+SELECT * From products;
+SELECT * From product_price_history;
+
+SELECT products.name, product_price_history.current_price
+FROM products
+JOIN product_price_history ON products.name = product_price_history.product

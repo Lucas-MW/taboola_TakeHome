@@ -1,1 +1,18 @@
-
+class Main {
+  //ascii 0 - 9
+  //48 - 57 decimal
+    public static int convert(String s){
+        int result = 0;
+        for(int i = 0; i < s.length(); i++){
+          int dec = s.charAt(i);
+          result = result * 10 + (dec - 48); 
+        }
+        return result;
+    }
+  
+  public static void main(String args[]) {
+      String s = "789";
+      int output = convert(s);
+      System.out.println(output);
+    }
+}

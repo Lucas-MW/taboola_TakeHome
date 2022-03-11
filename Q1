@@ -1,4 +1,4 @@
-class Main {
+public class Main {
   //ascii 0 - 9
   //48 - 57 decimal
     public static int convert(String s){
